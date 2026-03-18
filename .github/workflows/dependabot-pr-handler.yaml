@@ -7,7 +7,7 @@ on:
 jobs:
   handle:
     runs-on: ubuntu-latest
-    if: github.actor == 'dependabot[bot]'
+    if: github.actor == 'dependabot[bot]' || github.actor == 'snehalchavan11'
     permissions:
       pull-requests: write
       contents: read
@@ -29,7 +29,7 @@ jobs:
               owner: context.repo.owner,
               repo: context.repo.repo,
               pull_number: context.payload.pull_request.number,
-              team_reviewers: 'snehalchavan11'
+              reviewers: ['snehalchavan11']
             })
 
       # 2. Add severity label
