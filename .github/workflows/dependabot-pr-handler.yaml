@@ -23,7 +23,7 @@ jobs:
 
       # 1. Assign your team as reviewer
       - name: Assign reviewer group
-        uses: actions/github-script@v7
+        uses: actions/github-script@v8
         with:
           script: |
             await github.rest.pulls.requestReviewers({
@@ -35,7 +35,7 @@ jobs:
 
       # 2. Add severity label
       - name: Add severity label
-        uses: actions/github-script@v7
+        uses: actions/github-script@v8
         env:
           CVSS: ${{ steps.metadata.outputs.cvss }}
         with:
